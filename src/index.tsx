@@ -78,6 +78,7 @@ export function App() {
 
   return (
     <div
+      className="page-root"
       style={{
         margin: 0,
         height: "100vh",
@@ -91,6 +92,7 @@ export function App() {
     >
       {/* ─── Top bar ─── */}
       <header
+        className="top-bar"
         style={{
           ...container,
           display: "flex",
@@ -102,6 +104,7 @@ export function App() {
         }}
       >
         <span
+          className="logo"
           style={{
             fontFamily: font.logo,
             fontWeight: 700,
@@ -127,6 +130,7 @@ export function App() {
 
       {/* ─── Hero ─── */}
       <main
+        className="hero"
         style={{
           ...container,
           flex: 1,
@@ -137,6 +141,7 @@ export function App() {
       >
         {/* Left — copy + waitlist */}
         <div
+          className="hero-copy"
           style={{
             flex: "1 1 0",
             textAlign: "center",
@@ -162,6 +167,7 @@ export function App() {
           </h1>
 
           <p
+            className="subtitle"
             style={{
               fontFamily: font.body,
               fontWeight: 500,
@@ -233,6 +239,7 @@ export function App() {
 
         {/* Right — phone mockup */}
         <div
+          className="hero-mockup"
           style={{
             flex: "0 0 auto",
             display: "flex",

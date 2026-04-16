@@ -6,9 +6,60 @@ html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #F3F6FB;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Mobile responsive ─── */
+@media (max-width: 768px) {
+  .page-root {
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: auto !important;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .top-bar {
+    padding-top: 1.25rem !important;
+    padding-bottom: 0.75rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .top-bar .logo {
+    font-size: 2.5rem !important;
+  }
+
+  .hero {
+    flex-direction: column !important;
+    gap: 3rem !important;
+    padding: 2rem 1.5rem 3rem !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .hero-copy {
+    padding-right: 0 !important;
+  }
+
+  .hero-copy h1 {
+    font-size: 2rem !important;
+    white-space: normal !important;
+  }
+
+  .hero-copy .subtitle {
+    font-size: 0.78rem !important;
+  }
+
+  .hero-mockup img {
+    height: auto !important;
+    width: 260px !important;
+    max-height: none !important;
+  }
 }

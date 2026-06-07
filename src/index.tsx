@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Footer } from "./Layout";
 
 const colors = {
   navy: "#1B2A4A",
@@ -260,6 +261,8 @@ export function App() {
           />
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

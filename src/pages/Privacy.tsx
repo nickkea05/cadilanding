@@ -38,7 +38,7 @@ export function Privacy() {
       </header>
 
       <main style={{ flex: 1, maxWidth: 900, width: "100%", margin: "0 auto", padding: "2rem", boxSizing: "border-box" }}>
-        <div dangerouslySetInnerHTML={{ __html: '<div name="termly-embed" data-id="426a970b-64af-4205-8f7a-c513aff4b906"></div>' }} />
+        <div dangerouslySetInnerHTML={{ __html: '<div name="termly-embed" data-id="61434ffd-c986-46f5-a48c-57ceb4e46c0f"></div>' }} />
       </main>
 
       <Footer />

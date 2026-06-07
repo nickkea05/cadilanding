@@ -88,7 +88,6 @@ export function App() {
         color: colors.body,
         display: "flex",
         flexDirection: "column",
-        overflow: "hidden",
       }}
     >
       {/* ─── Top bar ─── */}
@@ -135,6 +134,7 @@ export function App() {
         style={{
           ...container,
           flex: 1,
+          minHeight: 0,
           display: "flex",
           alignItems: "center",
           gap: "5rem",

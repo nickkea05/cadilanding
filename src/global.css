@@ -42,6 +42,7 @@ body {
     padding: 2rem 1.5rem 3rem !important;
     align-items: center !important;
     justify-content: flex-start !important;
+    overflow: visible !important;
   }
 
   .hero-copy {

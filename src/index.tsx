@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { Footer } from "./Layout";
+import { AppStoreBadge } from "./AppStoreBadge";
 
 const colors = {
   navy: "#1B2A4A",
@@ -48,35 +48,6 @@ function TikTokIcon() {
 /* ─── Main page ─── */
 
 export function App() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "duplicate" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState("");
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email.trim() || status === "loading") return;
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = (await res.json()) as { error?: string };
-      if (res.ok) {
-        setStatus("success");
-      } else if (res.status === 409) {
-        setStatus("duplicate");
-      } else {
-        setErrorMsg(data.error || "Something went wrong");
-        setStatus("error");
-      }
-    } catch {
-      setErrorMsg("Unable to connect — try again");
-      setStatus("error");
-    }
-  }
-
   return (
     <div
       className="page-root"
@@ -140,7 +111,7 @@ export function App() {
           gap: "5rem",
         }}
       >
-        {/* Left — copy + waitlist */}
+        {/* Left — copy + download */}
         <div
           className="hero-copy"
           style={{
@@ -180,62 +151,10 @@ export function App() {
               textTransform: "uppercase",
             }}
           >
-            Join the waitlist — launching May 2026
+            The digital clubhouse — free on iPhone
           </p>
 
-          {status === "success" || status === "duplicate" ? (
-            <p
-              style={{
-                fontFamily: font.heading,
-                fontWeight: 700,
-                fontSize: "1.1rem",
-                color: colors.navy,
-                letterSpacing: "0.06em",
-                margin: 0,
-              }}
-            >
-              {status === "duplicate" ? "You\u2019re already on the list!" : "You\u2019re on the list."}
-            </p>
-          ) : (
-            <form onSubmit={handleSubmit} style={{ maxWidth: 300, margin: "0 auto" }}>
-              <input
-                type="email"
-                required
-                placeholder="Enter your email"
-                value={email}
-                disabled={status === "loading"}
-                onChange={(e) => setEmail(e.target.value)}
-                style={{
-                  fontFamily: font.body,
-                  fontWeight: 500,
-                  fontSize: "1rem",
-                  width: "100%",
-                  padding: "0.75rem 0",
-                  background: "transparent",
-                  border: "none",
-                  borderBottom: `1.5px solid ${colors.muted}`,
-                  color: colors.body,
-                  outline: "none",
-                  textAlign: "center",
-                  letterSpacing: "0.04em",
-                  boxSizing: "border-box",
-                  opacity: status === "loading" ? 0.5 : 1,
-                }}
-              />
-              <p
-                style={{
-                  fontFamily: font.body,
-                  fontWeight: 300,
-                  fontSize: "0.75rem",
-                  color: status === "error" ? "#c0392b" : colors.muted,
-                  marginTop: "0.6rem",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                {status === "error" ? errorMsg : status === "loading" ? "Joining..." : "Press Enter to join"}
-              </p>
-            </form>
-          )}
+          <AppStoreBadge />
         </div>
 
         {/* Right — phone mockup */}

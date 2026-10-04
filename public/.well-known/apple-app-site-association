@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["APPLE_TEAM_ID.app.cadigolf"],
+        "components": [
+          { "/": "/course/*", "comment": "Shared course" },
+          { "/": "/profile/*", "comment": "Shared profile" },
+          { "/": "/invite/*", "comment": "Referral invite" }
+        ]
+      }
+    ]
+  }
+}

@@ -6,6 +6,7 @@ import { App } from "./index";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
 import { Support } from "./pages/Support";
+import { OpenInApp } from "./pages/OpenInApp";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,6 +16,9 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/course/:id" element={<OpenInApp kind="course" />} />
+        <Route path="/profile/:id" element={<OpenInApp kind="profile" />} />
+        <Route path="/invite/:code" element={<OpenInApp kind="invite" />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

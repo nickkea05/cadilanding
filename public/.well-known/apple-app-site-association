@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["APPLE_TEAM_ID.app.cadigolf"],
+        "appIDs": ["9QS648ZS92.app.cadigolf"],
         "components": [
           { "/": "/course/*", "comment": "Shared course" },
           { "/": "/profile/*", "comment": "Shared profile" },

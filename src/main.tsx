@@ -7,6 +7,7 @@ import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
 import { Support } from "./pages/Support";
 import { OpenInApp } from "./pages/OpenInApp";
+import { ProfileInvite } from "./pages/ProfileInvite";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/course/:id" element={<OpenInApp kind="course" />} />
         <Route path="/profile/:id" element={<OpenInApp kind="profile" />} />
         <Route path="/invite/:code" element={<OpenInApp kind="invite" />} />
+        <Route path="/:slug" element={<ProfileInvite />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

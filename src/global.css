@@ -58,7 +58,7 @@ body {
     font-size: 0.78rem !important;
   }
 
-  .hero-mockup img {
+  .hero-mockup .mockup-img {
     height: auto !important;
     width: 260px !important;
     max-height: none !important;

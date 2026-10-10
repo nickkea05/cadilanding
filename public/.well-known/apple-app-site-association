@@ -6,6 +6,7 @@
         "components": [
           { "/": "/course/*", "comment": "Shared course" },
           { "/": "/profile/*", "comment": "Shared profile" },
+          { "/": "/@*", "comment": "Profile / referral link" },
           { "/": "/invite/*", "comment": "Referral invite" }
         ]
       }

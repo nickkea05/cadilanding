@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Footer } from "./Layout";
 import { AppStoreBadge } from "./AppStoreBadge";
 
@@ -47,7 +48,14 @@ function TikTokIcon() {
 
 /* ─── Main page ─── */
 
-export function App() {
+type AppProps = {
+  /** Replaces the phone mockup image (profile pages show the person's profile). */
+  phone?: ReactNode;
+  /** Replaces the App Store link's default navigation. */
+  onGetApp?: () => void;
+};
+
+export function App({ phone, onGetApp }: AppProps = {}) {
   return (
     <div
       className="page-root"
@@ -154,7 +162,7 @@ export function App() {
             The digital clubhouse — free on iPhone
           </p>
 
-          <AppStoreBadge />
+          <AppStoreBadge onClick={onGetApp} />
         </div>
 
         {/* Right — phone mockup */}
@@ -167,17 +175,20 @@ export function App() {
             justifyContent: "center",
           }}
         >
-          <img
-            src="/mockup.png"
-            alt="Cadi app"
-            style={{
-              height: "min(86vh, 780px)",
-              width: "auto",
-              filter: "drop-shadow(0 32px 80px rgba(27,42,74,0.28))",
-              userSelect: "none",
-              pointerEvents: "none",
-            }}
-          />
+          {phone ?? (
+            <img
+              className="mockup-img"
+              src="/mockup.png"
+              alt="Cadi app"
+              style={{
+                height: "min(86vh, 780px)",
+                width: "auto",
+                filter: "drop-shadow(0 32px 80px rgba(27,42,74,0.28))",
+                userSelect: "none",
+                pointerEvents: "none",
+              }}
+            />
+          )}
         </div>
       </main>
 
